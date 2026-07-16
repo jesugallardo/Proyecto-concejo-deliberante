@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concejo Municipal de la Ciudad de Mendoza</title>
+    
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- 🔌 VINCULACIÓN CON TU ARCHIVO DE ESTILOS CSS -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+       🔴 SECCIÓN EDITABLE: ACCESIBILIDAD Y CONTACTO (BARRA SUPERIOR)
+       ========================================================================== -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span class="top-contact-info">
+                9 de Julio 500 — Mendoza · Tel: 449-5356 · 
+                <a href="mailto:hcd_mentradas@ciudaddemendoza.gov.ar" class="top-contact-mail">hcd_mentradas@ciudaddemendoza.gov.ar</a>
+            </span>
+            <div class="accessibility">
+                <button onclick="cambiarTexto(-1)" title="Disminuir letra">A−</button>
+                <button onclick="cambiarTexto(1)" title="Aumentar letra">A+</button>
+                <button onclick="cambiarContraste()" title="Cambiar contraste">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       🔴 SECCIÓN EDITABLE: ENCABEZADO Y MENÚ DE NAVEGACIÓN
+       ========================================================================== -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <a href="#" class="logo-link">
+                    <span class="logo-main-text">Honorable Consejo Deliberante</span>
+                    <span class="logo-sub-text">de la Ciudad de Mendoza</span>
+                </a>
+            </div>
+            
+            <button class="menu-toggle" id="menu-btn" aria-label="Menú Móvil">
+                <i class="fa-solid fa-bars"></i> Menú
+            </button>
+
+            <nav class="main-nav" id="main-menu">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#institucional" class="dropbtn">Institucional <i class="fa-solid fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#institucional">El Concejo</a>
+                            <a href="#concejales">Nuestros Concejales</a>
+                            <a href="#institucional">Historia del Concejo</a>
+                            <a href="#institucional">Reglamento Interno</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#actividad" class="dropbtn">Actividad Legislativa <i class="fa-solid fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#actividad">Material de Sesión</a>
+                            <a href="#actividad">Sistema de Expedientes</a>
+                            <a href="#actividad">Comisiones</a>
+                            <a href="#actividad">Sesiones</a>
+                        </div>
+                    </li>
+                    <li><a href="#noticias">Noticias</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+       🔴 SECCIÓN EDITABLE: DIAPOSITIVAS DEL SLIDER (BANNERS PRINCIPALES)
+       (Para cambiar la foto, reemplaza 'imagenes/banner1.jpg' por la ruta de tu foto)
+       ========================================================================== -->
+    <section class="hero-slider-container" id="heroSlider">
+        <div class="slides-wrapper">
+            
+            <!-- Diapositiva 1 -->
+            <div class="slide is-active" style="background: linear-gradient(rgba(44, 62, 80, 0.75), rgba(44, 62, 80, 0.75)), url('imagenes/banner-1.jpg') no-repeat center center/cover;">
+                <div class="hero-content">
+                    <h2>Gestión Legislativa Abierta</h2>
+                    <p>Accedé a toda la información pública sobre proyectos, ordenanzas y las actividades del Concejo Deliberante de Mendoza.</p>
+                </div>
+            </div>
+            
+            <!-- Diapositiva 2 -->
+            <div class="slide" style="background: linear-gradient(rgba(44, 62, 80, 0.75), rgba(44, 62, 80, 0.75)), url('https://placehold.co/1200x400/2c3e50/ffffff?text=Fondo+Banner+2') no-repeat center center/cover;">
+                <div class="hero-content">
+                    <h2>Sesiones Ordinarias en Vivo</h2>
+                    <p>Seguí de cerca las transmisiones en vivo de los debates y las decisiones que impactan en la Ciudad de Mendoza.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Flechas de navegación -->
+        <button class="slider-arrow prev" onclick="concejoSlide(-1)" aria-label="Anterior">&#10094;</button>
+        <button class="slider-arrow next" onclick="concejoSlide(1)" aria-label="Siguiente">&#10095;</button>
+
+        <!-- Puntos del slider inferior -->
+        <div class="slider-dots">
+            <span class="dot is-active" onclick="concejoGo(0)"></span>
+            <span class="dot" onclick="concejoGo(1)"></span>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       🔴 SECCIÓN EDITABLE: ACCESOS DIRECTOS FLOTANTES (BOTONERA)
+       ========================================================================== -->
+    <section class="destacados-accesos container">
+        <div class="destacados-grid">
+            <a href="#" class="destacado-item btn-amarillo">
+                <i class="fa-solid fa-circle-play"></i> Sesión en vivo
+            </a>
+            <a href="#actividad" class="destacado-item">
+                <i class="fa-solid fa-folder-open"></i> Sistema Legislativo
+            </a>
+            <a href="#actividad" class="destacado-item">
+                <i class="fa-solid fa-file-pen"></i> Presentá tu proyecto
+            </a>
+            <a href="#boletin" class="destacado-item">
+                <i class="fa-solid fa-envelope-open-text"></i> Suscribite al Boletín
+            </a>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       🔴 SECCIÓN EDITABLE: INFORMACIÓN INSTITUCIONAL
+       ========================================================================== -->
+    <section id="institucional" class="section container">
+        <h2 class="home-section-title">Institucional</h2>
+        <div class="grid-2">
+            <div class="card-info">
+                <h3>El Honorable Concejo Deliberante</h3>
+                <p>Organizado de acuerdo a lo dispuesto por la Constitución de la Provincia de Mendoza y la Ley Orgánica de Municipalidades Nº 1079, nuestro Concejo Deliberante es el ámbito democrático donde se debaten y sancionan las normativas de la capital mendocina.</p>
+                <p style="margin-top: 15px;">Está integrado por 12 concejales y concejalas que representan a los vecinos de la ciudad, renovándose por mitades de manera democrática cada dos años.</p>
+            </div>
+            <div class="card-info">
+                <h3>Atribuciones Legislativas</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check" style="color: var(--color-acento);"></i> Dictar ordenanzas de urbanismo, servicios públicos y tasas.</li>
+                    <li><i class="fa-solid fa-check" style="color: var(--color-acento);"></i> Evaluar y aprobar el Presupuesto de Gastos de la Ciudad.</li>
+                    <li><i class="fa-solid fa-check" style="color: var(--color-acento);"></i> Ejercer control institucional sobre el Departamento Ejecutivo.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       🔴 SECCIÓN EDITABLE: LISTA DE CONCEJALES (CARRUSEL INTERACTIVO)
+       (Para agregar una foto real, reemplaza el bloque 'avatar-placeholder'
+       por: <img class="avatar-img" src="imagenes/concejal1.jpg" alt="Nombre">)
+       ========================================================================== -->
+    <section id="concejales" class="section bg-light">
+        <div class="container">
+            <h2 class="home-section-title">Nuestros Concejales</h2>
+            
+            <div class="cc-slider-container" id="ccSlider">
+                <div class="cc-wrapper">
+                    
+                    <!-- Concejal 1 -->
+                    <div class="cc-slide is-center">
+                        <div class="concejal-card">
+                            <div class="avatar-placeholder"><i class="fa-solid fa-circle-user"></i></div>
+                            <h3>Marcelo Rubio</h3>
+                            <p class="bloque">Presidente - UCR</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Concejal 2 -->
+                    <div class="cc-slide is-next">
+                        <div class="concejal-card">
+                            <div class="avatar-placeholder"><i class="fa-solid fa-circle-user"></i></div>
+                            <h3>Cielo Daou</h3>
+                            <p class="bloque">UCR - Cambia Mendoza</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Concejal 3 -->
+                    <div class="cc-slide is-prev">
+                        <div class="concejal-card">
+                            <div class="avatar-placeholder"><i class="fa-solid fa-circle-user"></i></div>
+                            <h3>Lucas Carosio</h3>
+                            <p class="bloque">PRO</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Concejal 4 -->
+                    <div class="cc-slide">
+                        <div class="concejal-card">
+                            <div class="avatar-placeholder"><i class="fa-solid fa-circle-user"></i></div>
+                            <h3>Ricardo García</h3>
+                            <p class="bloque">Partido Verde</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Flechas del Carrusel de Concejales -->
+                <button class="cc-arrow prev" onclick="ccGo(-1)" aria-label="Anterior">&#10094;</button>
+                <button class="cc-arrow next" onclick="ccGo(1)" aria-label="Siguiente">&#10095;</button>
+
+                <!-- Puntos inferiores del Carrusel -->
+                <div id="ccDots" class="slider-dots">
+                    <span class="dot is-active" onclick="ccGo2(0)"></span>
+                    <span class="dot" onclick="ccGo2(1)"></span>
+                    <span class="dot" onclick="ccGo2(2)"></span>
+                    <span class="dot" onclick="ccGo2(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       🔴 SECCIÓN EDITABLE: SECCIÓN ÚLTIMAS NOTICIAS (Tarjetas)
+       ========================================================================== -->
+    <section id="noticias" class="section container">
+        <h2 class="home-section-title">Últimas Noticias</h2>
+        <div class="grid-3">
+            
+            <!-- Noticia 1 -->
+            <div class="noticia-card">
+                <div>
+                    <span class="fecha">16/07/2026 · Noticias</span>
+                    <h3>El Concejo avanza con propuestas para potenciar el arbolado público de la Ciudad</h3>
+                    <p>Se mantuvieron reuniones de trabajo técnico con especialistas para optimizar la forestación urbana y el cuidado de los canales de riego.</p>
+                </div>
+                <a href="#" class="leer-mas">Leer más →</a>
+            </div>
+            
+            <!-- Noticia 2 -->
+            <div class="noticia-card">
+                <div>
+                    <span class="fecha">10/07/2026 · Noticias</span>
+                    <h3>Presentación del programa "Concejo Abierto" a instituciones</h3>
+                    <p>Escuelas secundarias de la capital mendocina participarán de simulaciones legislativas para conocer de cerca el trabajo de los concejales.</p>
+                </div>
+                <a href="#" class="leer-mas">Leer más →</a>
+            </div>
+            
+            <!-- Noticia 3 -->
+            <div class="noticia-card">
+                <div>
+                    <span class="fecha">05/07/2026 · Noticias</span>
+                    <h3>Aprobación de ordenanza para incentivar la energía solar</h3>
+                    <p>El cuerpo legislativo dio el visto bueno al proyecto que otorga incentivos impositivos para la instalación de sistemas de captación solar.</p>
+                </div>
+                <a href="#" class="leer-mas">Leer más →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       🔴 SECCIÓN EDITABLE: GRILLA ACTIVIDAD LEGISLATIVA
+       ========================================================================== -->
+    <section id="actividad" class="section bg-light">
+        <div class="container">
+            <h2 class="home-section-title">Actividad Legislativa</h2>
+            <div class="grid-3">
+                <div class="card-info">
+                    <h3><i class="fa-solid fa-file-lines" style="color: var(--color-acento);"></i> Material de Sesión</h3>
+                    <p>Consultá el orden del día y los expedientes que se van a tratar en la próxima sesión del Concejo.</p>
+                </div>
+                <div class="card-info">
+                    <h3><i class="fa-solid fa-folder-open" style="color: var(--color-acento);"></i> Sistema de Expedientes</h3>
+                    <p>Buscá el estado y el trámite de cualquier expediente presentado ante el Concejo Deliberante.</p>
+                </div>
+                <div class="card-info">
+                    <h3><i class="fa-solid fa-people-group" style="color: var(--color-acento);"></i> Comisiones</h3>
+                    <p>Conocé la composición y el trabajo de las comisiones internas donde se debaten los proyectos.</p>
+                </div>
+                <div class="card-info">
+                    <h3><i class="fa-solid fa-calendar-days" style="color: var(--color-acento);"></i> Sesiones</h3>
+                    <p>Revisá el calendario de sesiones ordinarias y extraordinarias, con sus actas y versiones taquigráficas.</p>
+                </div>
+                <div class="card-info">
+                    <h3><i class="fa-solid fa-file-pen" style="color: var(--color-acento);"></i> Presentá tu proyecto</h3>
+                    <p>Los vecinos pueden acercar iniciativas ciudadanas para que sean evaluadas por los concejales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       🔴 SECCIÓN EDITABLE: CAJA DE SUSCRIPCIÓN AL BOLETÍN
+       ========================================================================== -->
+    <section id="boletin" class="section container">
+        <div class="boletin-box">
+            <h2 class="home-section-title">Suscribite al Boletín</h2>
+            <p>Recibí por correo electrónico las novedades legislativas, sesiones y noticias del Concejo Municipal.</p>
+            <form class="boletin-form" id="boletinForm" novalidate>
+                <label for="boletinEmail" class="sr-only">Correo electrónico</label>
+                <input type="email" id="boletinEmail" name="email" placeholder="tu-email@ejemplo.com" required>
+                <button type="submit">Suscribirme</button>
+            </form>
+            <p class="boletin-msg" id="boletinMsg" role="status" aria-live="polite"></p>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       🔴 SECCIÓN EDITABLE: PIE DE PÁGINA (DATOS DE CONTACTO Y REDES)
+       ========================================================================== -->
+    <footer id="contacto" class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col-main">
+                <h3>Concejo Municipal de la Ciudad de Mendoza</h3>
+                <p class="footer-address">9 de Julio 500 — Mendoza</p>
+                <p class="footer-phone">Tel: (54) 261-449-5100</p>
+            </div>
+            <div class="footer-col-nav">
+                <h4>Institucional</h4>
+                <ul class="footer-links">
+                    <li><a href="#institucional">El Concejo</a></li>
+                    <li><a href="#concejales">Nuestros Concejales</a></li>
+                    <li><a href="#noticias">Noticias</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-social">
+                <h4>Seguinos</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Informática - Concejo Municipal de la Ciudad de Mendoza</p>
+        </div>
+    </footer>
+
+    <!-- 🔌 VINCULACIÓN CON TU ARCHIVO DE JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
