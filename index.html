@@ -153,67 +153,133 @@
         </div>
     </section>
 
-    <!-- ==========================================================================
-       🔴 SECCIÓN EDITABLE: LISTA DE CONCEJALES (CARRUSEL INTERACTIVO)
-       (Para agregar una foto real, reemplaza el bloque 'avatar-placeholder'
-       por: <img class="avatar-img" src="imagenes/concejal1.jpg" alt="Nombre">)
+ <!-- ==========================================================================
+       🏛️ SECCIÓN: ORGANIGRAMA INSTITUCIONAL Y BLOQUES POLÍTICOS (2026)
        ========================================================================== -->
     <section id="concejales" class="section bg-light">
         <div class="container">
-            <h2 class="home-section-title">Nuestros Concejales</h2>
+            <h2 class="home-section-title">Autoridades y Composición del Cuerpo</h2>
             
-            <div class="cc-slider-container" id="ccSlider">
-                <div class="cc-wrapper">
-                    
-                    <!-- Concejal 1 -->
-                    <div class="cc-slide is-center">
-                        <div class="concejal-card">
-                            <div class="avatar-placeholder"><i class="fa-solid fa-circle-user"></i></div>
-                            <h3>Marcelo Rubio</h3>
-                            <p class="bloque">Presidente - UCR</p>
-                        </div>
+            <!-- NIVEL 1: CÚSPIDE DEL ORGANIGRAMA (PRESIDENTE FIJO) -->
+            <div style="display: flex; justify-content: center; margin-bottom: 40px;">
+                <div class="concejal-card" style="border-top: 5px solid #e74c3c; width: 300px; background-color: var(--white);">
+                    <div style="color: #e74c3c; font-size: 50px; margin-bottom: 12px;">
+                        <i class="fa-solid fa-user-tie"></i>
                     </div>
-                    
-                    <!-- Concejal 2 -->
-                    <div class="cc-slide is-next">
-                        <div class="concejal-card">
-                            <div class="avatar-placeholder"><i class="fa-solid fa-circle-user"></i></div>
-                            <h3>Cielo Daou</h3>
-                            <p class="bloque">UCR - Cambia Mendoza</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Concejal 3 -->
-                    <div class="cc-slide is-prev">
-                        <div class="concejal-card">
-                            <div class="avatar-placeholder"><i class="fa-solid fa-circle-user"></i></div>
-                            <h3>Lucas Carosio</h3>
-                            <p class="bloque">PRO</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Concejal 4 -->
-                    <div class="cc-slide">
-                        <div class="concejal-card">
-                            <div class="avatar-placeholder"><i class="fa-solid fa-circle-user"></i></div>
-                            <h3>Ricardo García</h3>
-                            <p class="bloque">Partido Verde</p>
-                        </div>
-                    </div>
+                    <h3 style="font-weight: 700; color: var(--primary-color); font-size: 18px;">Marcelo Rubio</h3>
+                    <p style="font-weight: 600; color: #e74c3c; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; margin-top: 5px;">Presidente del HCD</p>
+                    <p style="font-size: 13px; color: #555; margin-top: 2px;">Frente Cambia Mendoza</p>
+                    <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2027</span>
+                </div>
+            </div>
 
+            <!-- NIVEL 2: SECRETARÍAS ADMINISTRATIVAS FIJAS -->
+            <div style="margin-bottom: 50px;">
+                <h3 style="font-size: 14px; color: #7f8c8d; font-weight: 700; text-align: center; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Secretarías Administrativas (No Electivas)</h3>
+                <div class="grid-3">
+                    <div class="concejal-card" style="background-color: var(--white); padding: 15px; border-top: 3px solid #bdc3c7;">
+                        <h4 style="font-size: 14px; font-weight: 700; color: var(--primary-color);">Leandro Le Donne</h4>
+                        <p style="font-size: 11px; color: var(--accent-color); font-weight: 600; text-transform: uppercase; margin-top: 3px;">Secretario Habilitado</p>
+                    </div>
+                    <div class="concejal-card" style="background-color: var(--white); padding: 15px; border-top: 3px solid #bdc3c7;">
+                        <h4 style="font-size: 14px; font-weight: 700; color: var(--primary-color);">Federico Navarro Cavagnaro</h4>
+                        <p style="font-size: 11px; color: var(--accent-color); font-weight: 600; text-transform: uppercase; margin-top: 3px;">Secretario Legislativo</p>
+                    </div>
+                    <div class="concejal-card" style="background-color: var(--white); padding: 15px; border-top: 3px solid #bdc3c7;">
+                        <h4 style="font-size: 14px; font-weight: 700; color: var(--primary-color);">Emanuel Italiano</h4>
+                        <p style="font-size: 11px; color: var(--accent-color); font-weight: 600; text-transform: uppercase; margin-top: 3px;">Prosecretario</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NIVEL 3: BLOQUES POLÍTICOS ACORDEÓN -->
+            <div style="border-top: 1px solid var(--border-color); padding-top: 40px;">
+                <h3 style="font-size: 18px; color: var(--primary-color); font-weight: 700; margin-bottom: 25px; border-left: 4px solid var(--primary-color); padding-left: 15px;">Composición por Bloques Políticos</h3>
+                
+                <!-- BLOQUE 1 -->
+                <div style="margin-bottom: 15px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
+                    <button class="bloque-toggle-btn" onclick="toggleBloque('bloque1')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
+                        <span style="font-size: 15px; font-weight: 700; color: var(--primary-color);"><i class="fa-solid fa-gavel" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque La Libertad Avanza + Frente Cambia Mendoza</span>
+                        <span style="font-size: 12px; font-weight: bold; color: #7f8c8d;">5 Concejales <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
+                    </button>
+                    <div id="bloque1" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa;">
+                        <p style="font-size: 12px; font-weight: bold; color: #e74c3c; margin-bottom: 15px; text-transform: uppercase;"><i class="fa-solid fa-star"></i> Integrantes del Bloque (Mandatos hasta 2030):</p>
+                        <div class="grid-3">
+                            <div class="concejal-card" style="padding: 15px; background: #fff;"><h4 style="font-size: 14px;">Cecilia Rodríguez</h4></div>
+                            <div class="concejal-card" style="padding: 15px; background: #fff;"><h4 style="font-size: 14px;">Maximiliano Garrido</h4></div>
+                            <div class="concejal-card" style="padding: 15px; background: #fff;"><h4 style="font-size: 14px;">Laura Villarreal Occhionero</h4></div>
+                            <div class="concejal-card" style="padding: 15px; background: #fff;"><h4 style="font-size: 14px;">Carla Ernani</h4></div>
+                            <div class="concejal-card" style="padding: 15px; background: #fff;"><h4 style="font-size: 14px;">Tomás Dris</h4></div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Flechas del Carrusel de Concejales -->
-                <button class="cc-arrow prev" onclick="ccGo(-1)" aria-label="Anterior">&#10094;</button>
-                <button class="cc-arrow next" onclick="ccGo(1)" aria-label="Siguiente">&#10095;</button>
-
-                <!-- Puntos inferiores del Carrusel -->
-                <div id="ccDots" class="slider-dots">
-                    <span class="dot is-active" onclick="ccGo2(0)"></span>
-                    <span class="dot" onclick="ccGo2(1)"></span>
-                    <span class="dot" onclick="ccGo2(2)"></span>
-                    <span class="dot" onclick="ccGo2(3)"></span>
+                <!-- BLOQUE 2 -->
+                <div style="margin-bottom: 15px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
+                    <button class="bloque-toggle-btn" onclick="toggleBloque('bloque2')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
+                        <span style="font-size: 15px; font-weight: 700; color: var(--primary-color);"><i class="fa-solid fa-gavel" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque Frente Cambia Mendoza</span>
+                        <span style="font-size: 12px; font-weight: bold; color: #7f8c8d;">4 Concejales <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
+                    </button>
+                    <div id="bloque2" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa;">
+                        <p style="font-size: 12px; font-weight: bold; color: #e74c3c; margin-bottom: 15px; text-transform: uppercase;"><i class="fa-solid fa-star"></i> Integrantes del Bloque (Mandatos hasta 2027):</p>
+                        <div class="grid-3">
+                            <div class="concejal-card" style="padding: 15px; background: #fff; border-left: 3px solid #e74c3c;"><h4 style="font-size: 14px;">Marcelo Rubio</h4><p style="font-size: 11px; color:#e74c3c; font-weight: bold;">Presidente HCD</p></div>
+                            <div class="concejal-card" style="padding: 15px; background: #fff;"><h4 style="font-size: 14px;">Cielo Daou</h4></div>
+                            <div class="concejal-card" style="padding: 15px; background: #fff;"><h4 style="font-size: 14px;">Rafael Bazán</h4></div>
+                            <div class="concejal-card" style="padding: 15px; background: #fff;"><h4 style="font-size: 14px;">Ernesto Giménez</h4></div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- BLOQUE 3 -->
+                <div style="margin-bottom: 15px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
+                    <button class="bloque-toggle-btn" onclick="toggleBloque('bloque3')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
+                        <span style="font-size: 15px; font-weight: 700; color: var(--primary-color);"><i class="fa-solid fa-gavel" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque Fuerza Justicialista Mendoza</span>
+                        <span style="font-size: 12px; font-weight: bold; color: #7f8c8d;">1 Concejal <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
+                    </button>
+                    <div id="bloque3" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa;">
+                        <div class="grid-3">
+                            <div class="concejal-card" style="padding: 15px; background: #fff;">
+                                <h4 style="font-size: 14px;">Gustavo Caleau</h4>
+                                <span style="font-size: 11px; color: #95a5a6;">Mandato hasta 2030</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLOQUE 4 -->
+                <div style="margin-bottom: 15px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
+                    <button class="bloque-toggle-btn" onclick="toggleBloque('bloque4')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
+                        <span style="font-size: 15px; font-weight: 700; color: var(--primary-color);"><i class="fa-solid fa-gavel" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque Partido Verde</span>
+                        <span style="font-size: 12px; font-weight: bold; color: #7f8c8d;">1 Concejal <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
+                    </button>
+                    <div id="bloque4" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa;">
+                        <div class="grid-3">
+                            <div class="concejal-card" style="padding: 15px; background: #fff; border-left: 3px solid var(--accent-color);">
+                                <h4 style="font-size: 14px;">Ricardo García</h4>
+                                <p style="font-size: 11px; color: var(--accent-color); font-weight: bold;">Historial de Vicepresidencia</p>
+                                <span style="font-size: 11px; color: #95a5a6;">Mandato hasta 2027</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLOQUE 5 -->
+                <div style="margin-bottom: 15px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
+                    <button class="bloque-toggle-btn" onclick="toggleBloque('bloque5')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
+                        <span style="font-size: 15px; font-weight: 700; color: var(--primary-color);"><i class="fa-solid fa-gavel" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque Coalición Cívica + ARI</span>
+                        <span style="font-size: 12px; font-weight: bold; color: #7f8c8d;">1 Concejal <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
+                    </button>
+                    <div id="bloque5" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa;">
+                        <div class="grid-3">
+                            <div class="concejal-card" style="padding: 15px; background: #fff;">
+                                <h4 style="font-size: 14px;">Gustavo Gutiérrez</h4>
+                                <span style="font-size: 11px; color: #95a5a6;">Mandato hasta 2027</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>

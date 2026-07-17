@@ -129,3 +129,23 @@ if (boletinForm) {
         }
     });
 }
+// 7. FUNCIONALIDAD ORGANIGRAMA: DESPLEGAR BLOQUES POLÍTICOS (ACORDEÓN)
+window.toggleBloque = function(bloqueId) {
+    const contenedor = document.getElementById(bloqueId);
+    const boton = contenedor.previousElementSibling;
+    const icono = boton.querySelector('.fa-chevron-down, fa-chevron-up');
+    
+    if (contenedor.style.display === "none" || contenedor.style.display === "") {
+        contenedor.style.display = "block";
+        if (icono) {
+            icono.classList.remove('fa-chevron-down');
+            icono.classList.add('fa-chevron-up');
+        }
+    } else {
+        contenedor.style.display = "none";
+        if (icono) {
+            icono.classList.remove('fa-chevron-up');
+            icono.classList.add('fa-chevron-down');
+        }
+    }
+};
