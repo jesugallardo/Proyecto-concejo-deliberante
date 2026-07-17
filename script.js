@@ -133,10 +133,10 @@ if (boletinForm) {
 window.toggleBloque = function(bloqueId) {
     const contenedor = document.getElementById(bloqueId);
     const boton = contenedor.previousElementSibling;
-    const icono = boton.querySelector('.fa-chevron-down, fa-chevron-up');
+    const icono = boton.querySelector('.fa-chevron-down, .fa-chevron-up');
     
     if (contenedor.style.display === "none" || contenedor.style.display === "") {
-        contenedor.style.display = "block";
+        contenedor.style.display = "flex"; // Cambiado a 'flex' para mantener el alineamiento horizontal del carrusel
         if (icono) {
             icono.classList.remove('fa-chevron-down');
             icono.classList.add('fa-chevron-up');
