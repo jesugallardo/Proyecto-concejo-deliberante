@@ -689,3 +689,132 @@ body.high-contrast .dropdown-content a:hover {
         grid-template-columns: 1fr;
     }
 }
+/* ==========================================================================
+   🏛️ COMPONENTE: ORGANIGRAMA INSTITUCIONAL Y ACORDEÓN DE BLOQUES
+   ========================================================================== */
+
+/* Estilos de los botones principales del acordeón */
+.bloque-toggle-btn {
+    width: 100%;
+    padding: 20px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.bloque-toggle-btn:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Título del Bloque Político (Primer texto interno) */
+.bloque-toggle-btn span:first-child {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Indicador de Acción / Flecha (Segundo texto interno) */
+.bloque-toggle-btn span:last-child {
+    font-size: 13px;
+    font-weight: 600;
+    color: #7f8c8d;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Escenario general del Carrusel 3D interno */
+#concejales .cc-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Flechas de control del carrusel */
+#concejales .cc-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#concejales .cc-arrow:hover {
+    background: var(--accent-color);
+}
+
+#concejales .cc-arrow.prev { left: 10px; }
+#concejales .cc-arrow.next { right: 10px; }
+
+
+/* ==========================================================================
+   📱 ADAPTACIÓN RESPONSIVA: AJUSTES EXCLUSIVOS PARA CELULARES (max-width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    /* CORRECCIÓN DE LA CAPTURA: Reacomoda los textos del botón en fila vertical */
+    .bloque-toggle-btn {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        padding: 15px 12px !important;
+    }
+
+    /* Nombre del bloque político se lee de corrido usando el 100% del ancho */
+    .bloque-toggle-btn span:first-child {
+        width: 100%;
+        font-size: 14px !important;
+        line-height: 1.4;
+    }
+
+    /* El texto de acción "Ver Bloque..." se desliza abajo a la derecha de forma prolija */
+    .bloque-toggle-btn span:last-child {
+        align-self: flex-end;
+        font-size: 11.5px !important;
+        color: var(--accent-color) !important;
+    }
+
+    /* Escalado uniforme del carrusel 3D para evitar desbordes físicos */
+    #concejales .cc-wrapper {
+        transform: scale(0.85);
+        transform-origin: center center;
+        margin-top: -10px;
+        margin-bottom: -10px;
+    }
+
+    /* Ajuste milimétrico de fuentes internas de las tarjetas para que no rompan renglón */
+    #concejales .concejal-card h3, 
+    #concejales .concejal-card h4 {
+        font-size: 13px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #concejales .concejal-card p, 
+    #concejales .concejal-card span {
+        font-size: 10.5px !important;
+        line-height: 1.2;
+    }
+}

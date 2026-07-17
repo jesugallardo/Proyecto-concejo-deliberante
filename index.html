@@ -154,7 +154,7 @@
     </section>
 
  <!-- ==========================================================================
-       🏛️ SECCIÓN: ORGANIGRAMA CON CARRUSELES TRIDIMENSIONALES (3D) POR BLOQUES
+       🏛️ SECCIÓN COMPLETA: ORGANIGRAMA INSTITUCIONAL Y BLOQUES (2026)
        ========================================================================== -->
     <section id="concejales" class="section bg-light">
         <div class="container">
@@ -175,7 +175,7 @@
 
             <!-- NIVEL 2: SECRETARÍAS ADMINISTRATIVAS FIJAS -->
             <div style="margin-bottom: 50px;">
-                <h3 style="font-size: 14px; color: #7f8c8d; font-weight: 700; text-align: center; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Secretarías</h3>
+                <h3 style="font-size: 14px; color: #7f8c8d; font-weight: 700; text-align: center; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Secretarías Administrativas (No Electivas)</h3>
                 <div class="grid-3">
                     <div class="concejal-card" style="background-color: var(--white); padding: 15px; border-top: 3px solid #bdc3c7;">
                         <h4 style="font-size: 14px; font-weight: 700; color: var(--primary-color);">Leandro Le Donne</h4>
@@ -192,21 +192,21 @@
                 </div>
             </div>
 
-            <!-- NIVEL 3: BLOQUES POLÍTICOS CON CARRUSELES 3D -->
+            <!-- NIVEL 3: ACORDEONES POR BLOQUES POLÍTICOS -->
             <div style="border-top: 1px solid var(--border-color); padding-top: 40px;">
-                <h3 style="font-size: 18px; color: var(--primary-color); font-weight: 700; margin-bottom: 25px; border-left: 4px solid var(--primary-color); padding-left: 15px;">Composición por Bloques Polítulos</h3>
+                <h3 style="font-size: 18px; color: var(--primary-color); font-weight: 700; margin-bottom: 25px; border-left: 4px solid var(--primary-color); padding-left: 15px;">Composición por Bloques Políticos</h3>
                 
-                <!-- BLOQUE 1: LLA + FCM -->
-                <div style="margin-bottom: 25px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
+                <!-- BLOQUE 1: LLA + FCM (CARRUSEL 3D) -->
+                <div style="margin-bottom: 20px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
                     <button class="bloque-toggle-btn" onclick="toggleBloque('bloque1')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 15px; font-weight: 700; color: var(--primary-color);"><i class="fa-solid fa-layer-group" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque La Libertad Avanza + Frente Cambia Mendoza</span>
-                        <span style="font-size: 12px; font-weight: bold; color: #7f8c8d;">Ver Bloque e Integrantes<i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
+                        <span><i class="fa-solid fa-layer-group" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque La Libertad Avanza + Frente Cambia Mendoza</span>
+                        <span>Ver Bloque e Integrantes <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
                     </button>
                     
                     <div id="bloque1" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa;">
                         <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center; width: 100%;">
                             
-                            <!-- Referente Izquierda (Fijo) -->
+                            <!-- Presidente de Bloque Fijo -->
                             <div class="concejal-card" style="flex: 0 0 240px; background: #fff; border-left: 4px solid var(--accent-color); text-align: center; padding: 15px; z-index: 10;">
                                 <div style="font-size: 24px; color: var(--accent-color); margin-bottom: 5px;"><i class="fa-solid fa-star"></i></div>
                                 <h4 style="font-size: 14px; font-weight: 700;">Cecilia Rodríguez</h4>
@@ -214,9 +214,8 @@
                                 <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 2px;">Mandato hasta 2030</span>
                             </div>
 
-                            <!-- Escenario del Carrusel 3D -->
+                            <!-- Escenario 3D Oculto Derecho -->
                             <div class="cc-wrapper" style="flex: 1; min-width: 300px; height: 200px; position: relative;">
-                                
                                 <button class="cc-arrow prev" onclick="mover3DBloque('bloque1Container', -1)" style="left: 5px; padding: 5px 10px; font-size: 16px;">&#10094;</button>
                                 
                                 <div id="bloque1Container" style="width:100%; height:100%; position:relative; display:flex; justify-content:center; align-items:center;">
@@ -245,17 +244,17 @@
                     </div>
                 </div>
 
-                <!-- BLOQUE 2: FCM -->
+                <!-- BLOQUE 2: FRENTE CAMBIA MENDOZA (CARRUSEL 3D) -->
                 <div style="margin-bottom: 20px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
                     <button class="bloque-toggle-btn" onclick="toggleBloque('bloque2')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 15px; font-weight: 700; color: var(--primary-color);"><i class="fa-solid fa-layer-group" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque Frente Cambia Mendoza</span>
-                        <span style="font-size: 12px; font-weight: bold; color: #7f8c8d;">Ver Bloque e Integrantes<i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
+                        <span><i class="fa-solid fa-layer-group" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque Frente Cambia Mendoza</span>
+                        <span>Ver Bloque e Integrantes <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
                     </button>
                     
                     <div id="bloque2" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa;">
                         <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center; width: 100%;">
                             
-                            <!-- Referente Izquierda (Fijo) -->
+                            <!-- Presidente de Bloque Fijo -->
                             <div class="concejal-card" style="flex: 0 0 240px; background: #fff; border-left: 4px solid #e74c3c; text-align: center; padding: 15px; z-index: 10;">
                                 <div style="font-size: 24px; color: #e74c3c; margin-bottom: 5px;"><i class="fa-solid fa-star"></i></div>
                                 <h4 style="font-size: 14px; font-weight: 700;">Marcelo Rubio</h4>
@@ -263,9 +262,8 @@
                                 <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 2px;">Mandato hasta 2027</span>
                             </div>
 
-                            <!-- Escenario del Carrusel 3D -->
+                            <!-- Escenario 3D Oculto Derecho -->
                             <div class="cc-wrapper" style="flex: 1; min-width: 300px; height: 200px; position: relative;">
-                                
                                 <button class="cc-arrow prev" onclick="mover3DBloque('bloque2Container', -1)" style="left: 5px; padding: 5px 10px; font-size: 16px;">&#10094;</button>
                                 
                                 <div id="bloque2Container" style="width:100%; height:100%; position:relative; display:flex; justify-content:center; align-items:center;">
@@ -290,44 +288,47 @@
                     </div>
                 </div>
 
-                <!-- BLOQUES MONO-CONCEJALES FIJOS -->
-                <!-- BLOQUE 3 -->
+                <!-- MONOBLOQUES FIJOS ESTÉTICOS -->
+                <!-- BLOQUE 3: FUERZA JUSTICIALISTA -->
                 <div style="margin-bottom: 15px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
                     <button class="bloque-toggle-btn" onclick="toggleBloque('bloque3')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 15px; font-weight: 700; color: var(--primary-color);"><i class="fa-solid fa-user" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque Fuerza Justicialista Mendoza</span>
-                        <span style="font-size: 12px; font-weight: bold; color: #7f8c8d;">Ver Integrante <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
+                        <span><i class="fa-solid fa-user" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque Fuerza Justicialista Mendoza</span>
+                        <span>Ver Integrante <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
                     </button>
-                    <div id="bloque3" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa;">
+                    <div id="bloque3" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa; justify-content: center;">
                         <div class="concejal-card" style="width: 240px; background: #fff; padding: 15px; text-align: center;">
                             <h4 style="font-size: 14px; font-weight: 700;">Gustavo Caleau</h4>
+                            <p style="font-size: 11px; color: #7f8c8d; margin-top: 3px;">Monobloque</p>
                             <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 4px;">Mandato hasta 2030</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- BLOQUE 4 -->
+                <!-- BLOQUE 4: PARTIDO VERDE -->
                 <div style="margin-bottom: 15px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
                     <button class="bloque-toggle-btn" onclick="toggleBloque('bloque4')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 15px; font-weight: 700; color: var(--primary-color);"><i class="fa-solid fa-user" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque Partido Verde</span>
-                        <span style="font-size: 12px; font-weight: bold; color: #7f8c8d;">Ver Integrante <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
+                        <span><i class="fa-solid fa-user" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque Partido Verde</span>
+                        <span>Ver Integrante <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
                     </button>
-                    <div id="bloque4" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa;">
+                    <div id="bloque4" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa; justify-content: center;">
                         <div class="concejal-card" style="width: 240px; background: #fff; padding: 15px; text-align: center; border-left: 3px solid var(--accent-color);">
                             <h4 style="font-size: 14px; font-weight: 700;">Ricardo García</h4>
+                            <p style="font-size: 11px; color: var(--accent-color); font-weight: bold; margin-top: 3px;">Historial de Vicepresidencia</p>
                             <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 4px;">Mandato hasta 2027</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- BLOQUE 5 -->
+                <!-- BLOQUE 5: COALICIÓN CÍVICA + ARI -->
                 <div style="margin-bottom: 15px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
                     <button class="bloque-toggle-btn" onclick="toggleBloque('bloque5')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 15px; font-weight: 700; color: var(--primary-color);"><i class="fa-solid fa-user" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque Coalición Cívica + ARI</span>
-                        <span style="font-size: 12px; font-weight: bold; color: #7f8c8d;">Ver Integrante <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
+                        <span><i class="fa-solid fa-user" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque Coalición Cívica + ARI</span>
+                        <span>Ver Integrante <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
                     </button>
-                    <div id="bloque5" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa;">
+                    <div id="bloque5" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa; justify-content: center;">
                         <div class="concejal-card" style="width: 240px; background: #fff; padding: 15px; text-align: center;">
                             <h4 style="font-size: 14px; font-weight: 700;">Gustavo Gutiérrez</h4>
+                            <p style="font-size: 11px; color: #7f8c8d; margin-top: 3px;">Monobloque</p>
                             <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 4px;">Mandato hasta 2027</span>
                         </div>
                     </div>
