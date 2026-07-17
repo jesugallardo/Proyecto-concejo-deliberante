@@ -129,14 +129,14 @@ if (boletinForm) {
         }
     });
 }
-// 7. FUNCIONALIDAD ORGANIGRAMA: DESPLEGAR BLOQUES POLÍTICOS (ACORDEÓN)
+// 7. FUNCIONALIDAD ORGANIGRAMA: ACORDEÓN + CARRUSELES INDEPENDIENTES EN 3D
 window.toggleBloque = function(bloqueId) {
     const contenedor = document.getElementById(bloqueId);
     const boton = contenedor.previousElementSibling;
     const icono = boton.querySelector('.fa-chevron-down, .fa-chevron-up');
     
     if (contenedor.style.display === "none" || contenedor.style.display === "") {
-        contenedor.style.display = "flex"; // Cambiado a 'flex' para mantener el alineamiento horizontal del carrusel
+        contenedor.style.display = "flex";
         if (icono) {
             icono.classList.remove('fa-chevron-down');
             icono.classList.add('fa-chevron-up');
@@ -148,4 +148,40 @@ window.toggleBloque = function(bloqueId) {
             icono.classList.add('fa-chevron-down');
         }
     }
+};
+
+// Guardamos de manera aislada el concejal central de cada contenedor
+const estados3D = {
+    bloque1Container: 0,
+    bloque2Container: 0
+};
+
+window.mover3DBloque = function(containerId, direccion) {
+    const contenedor = document.getElementById(containerId);
+    if (!contenedor) return;
+    
+    const slides = [].slice.call(contenedor.querySelectorAll('.cc-slide'));
+    const n = slides.length;
+    if (n === 0) return;
+
+    // Actualizar el índice del elemento que pasará al centro
+    estados3D[containerId] = (estados3D[containerId] + direccion + n) % n;
+    const centroIdx = estados3D[containerId];
+
+    // Recorrer los elementos del contenedor y redistribuir posiciones 3D (Coverflow)
+    slides.forEach(function(slide, k) {
+        slide.classList.remove('is-center', 'is-prev', 'is-next');
+        slide.style.visibility = "hidden"; // Ocultar los que quedan en el fondo absoluto
+        
+        if (k === centroIdx) {
+            slide.classList.add('is-center');
+            slide.style.visibility = "visible";
+        } else if (k === (centroIdx - 1 + n) % n) {
+            slide.classList.add('is-prev');
+            slide.style.visibility = "visible";
+        } else if (k === (centroIdx + 1) % n) {
+            slide.classList.add('is-next');
+            slide.style.visibility = "visible";
+        }
+    });
 };

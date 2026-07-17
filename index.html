@@ -154,7 +154,7 @@
     </section>
 
  <!-- ==========================================================================
-       🏛️ SECCIÓN: ORGANIGRAMA INSTITUCIONAL CON CARRUSEL POR BLOQUES (2026)
+       🏛️ SECCIÓN: ORGANIGRAMA CON CARRUSELES TRIDIMENSIONALES (3D) POR BLOQUES
        ========================================================================== -->
     <section id="concejales" class="section bg-light">
         <div class="container">
@@ -192,91 +192,105 @@
                 </div>
             </div>
 
-            <!-- NIVEL 3: BLOQUES POLÍTICOS CON CARRUSEL INTERNO -->
+            <!-- NIVEL 3: BLOQUES POLÍTICOS CON CARRUSELES 3D -->
             <div style="border-top: 1px solid var(--border-color); padding-top: 40px;">
-                <h3 style="font-size: 18px; color: var(--primary-color); font-weight: 700; margin-bottom: 25px; border-left: 4px solid var(--primary-color); padding-left: 15px;">Composición por Bloques Políticos</h3>
+                <h3 style="font-size: 18px; color: var(--primary-color); font-weight: 700; margin-bottom: 25px; border-left: 4px solid var(--primary-color); padding-left: 15px;">Composición por Bloques Polítulos</h3>
                 
-                <!-- BLOQUE 1: LLA + FCM (Múltiples integrantes en Carrusel) -->
-                <div style="margin-bottom: 20px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
+                <!-- BLOQUE 1: LLA + FCM -->
+                <div style="margin-bottom: 25px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
                     <button class="bloque-toggle-btn" onclick="toggleBloque('bloque1')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
                         <span style="font-size: 15px; font-weight: 700; color: var(--primary-color);"><i class="fa-solid fa-layer-group" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque La Libertad Avanza + Frente Cambia Mendoza</span>
-                        <span style="font-size: 12px; font-weight: bold; color: #7f8c8d;">Ver Bloque y Carrusel <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
+                        <span style="font-size: 12px; font-weight: bold; color: #7f8c8d;">Ver Bloque e Integrantes 3D <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
                     </button>
                     
                     <div id="bloque1" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa;">
-                        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center; width: 100%;">
                             
-                            <!-- Presidente de Bloque (Fijo a la izquierda) -->
-                            <div class="concejal-card" style="flex: 0 0 240px; background: #fff; border-left: 4px solid var(--accent-color); text-align: center; padding: 15px;">
+                            <!-- Referente Izquierda (Fijo) -->
+                            <div class="concejal-card" style="flex: 0 0 240px; background: #fff; border-left: 4px solid var(--accent-color); text-align: center; padding: 15px; z-index: 10;">
                                 <div style="font-size: 24px; color: var(--accent-color); margin-bottom: 5px;"><i class="fa-solid fa-star"></i></div>
                                 <h4 style="font-size: 14px; font-weight: 700;">Cecilia Rodríguez</h4>
                                 <p style="font-size: 11px; color: var(--accent-color); font-weight: bold; text-transform: uppercase; margin-top: 3px;">Presidente de Bloque</p>
                                 <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 2px;">Mandato hasta 2030</span>
                             </div>
 
-                            <!-- Carrusel Deslizable del Resto de Concejales -->
-                            <div style="flex: 1; min-width: 280px; display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; scroll-behavior: smooth;">
-                                <div class="concejal-card" style="flex: 0 0 200px; background: #fff; padding: 15px; text-align: center;">
-                                    <h4 style="font-size: 14px;">Maximiliano Garrido</h4>
-                                    <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2030</span>
+                            <!-- Escenario del Carrusel 3D -->
+                            <div class="cc-wrapper" style="flex: 1; min-width: 300px; height: 200px; position: relative;">
+                                
+                                <button class="cc-arrow prev" onclick="mover3DBloque('bloque1Container', -1)" style="left: 5px; padding: 5px 10px; font-size: 16px;">&#10094;</button>
+                                
+                                <div id="bloque1Container" style="width:100%; height:100%; position:relative; display:flex; justify-content:center; align-items:center;">
+                                    <div class="concejal-card cc-slide is-center" style="position:absolute; width:200px; background:#fff; padding:15px; text-align:center;">
+                                        <h4 style="font-size: 14px; font-weight:700;">Maximiliano Garrido</h4>
+                                        <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2030</span>
+                                    </div>
+                                    <div class="concejal-card cc-slide is-next" style="position:absolute; width:200px; background:#fff; padding:15px; text-align:center;">
+                                        <h4 style="font-size: 14px; font-weight:700;">L. Villarreal Occhionero</h4>
+                                        <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2030</span>
+                                    </div>
+                                    <div class="concejal-card cc-slide" style="position:absolute; width:200px; background:#fff; padding:15px; text-align:center;">
+                                        <h4 style="font-size: 14px; font-weight:700;">Carla Ernani</h4>
+                                        <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2030</span>
+                                    </div>
+                                    <div class="concejal-card cc-slide is-prev" style="position:absolute; width:200px; background:#fff; padding:15px; text-align:center;">
+                                        <h4 style="font-size: 14px; font-weight:700;">Tomás Dris</h4>
+                                        <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2030</span>
+                                    </div>
                                 </div>
-                                <div class="concejal-card" style="flex: 0 0 200px; background: #fff; padding: 15px; text-align: center;">
-                                    <h4 style="font-size: 14px;">L. Villarreal Occhionero</h4>
-                                    <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2030</span>
-                                </div>
-                                <div class="concejal-card" style="flex: 0 0 200px; background: #fff; padding: 15px; text-align: center;">
-                                    <h4 style="font-size: 14px;">Carla Ernani</h4>
-                                    <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2030</span>
-                                </div>
-                                <div class="concejal-card" style="flex: 0 0 200px; background: #fff; padding: 15px; text-align: center;">
-                                    <h4 style="font-size: 14px;">Tomás Dris</h4>
-                                    <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2030</span>
-                                </div>
+
+                                <button class="cc-arrow next" onclick="mover3DBloque('bloque1Container', 1)" style="right: 5px; padding: 5px 10px; font-size: 16px;">&#10095;</button>
                             </div>
 
                         </div>
                     </div>
                 </div>
 
-                <!-- BLOQUE 2: FCM (Múltiples integrantes en Carrusel) -->
+                <!-- BLOQUE 2: FCM -->
                 <div style="margin-bottom: 20px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
                     <button class="bloque-toggle-btn" onclick="toggleBloque('bloque2')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
                         <span style="font-size: 15px; font-weight: 700; color: var(--primary-color);"><i class="fa-solid fa-layer-group" style="margin-right: 10px; color: var(--accent-color);"></i> Bloque Frente Cambia Mendoza</span>
-                        <span style="font-size: 12px; font-weight: bold; color: #7f8c8d;">Ver Bloque y Carrusel <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
+                        <span style="font-size: 12px; font-weight: bold; color: #7f8c8d;">Ver Bloque e Integrantes 3D <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i></span>
                     </button>
                     
                     <div id="bloque2" style="display: none; padding: 20px; border-top: 1px solid #f1f1f1; background-color: #fafafa;">
-                        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center; width: 100%;">
                             
-                            <!-- Presidente de Bloque / Referente (Fijo a la izquierda) -->
-                            <div class="concejal-card" style="flex: 0 0 240px; background: #fff; border-left: 4px solid #e74c3c; text-align: center; padding: 15px;">
+                            <!-- Referente Izquierda (Fijo) -->
+                            <div class="concejal-card" style="flex: 0 0 240px; background: #fff; border-left: 4px solid #e74c3c; text-align: center; padding: 15px; z-index: 10;">
                                 <div style="font-size: 24px; color: #e74c3c; margin-bottom: 5px;"><i class="fa-solid fa-star"></i></div>
                                 <h4 style="font-size: 14px; font-weight: 700;">Marcelo Rubio</h4>
                                 <p style="font-size: 11px; color: #e74c3c; font-weight: bold; text-transform: uppercase; margin-top: 3px;">Presidente del Bloque</p>
                                 <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 2px;">Mandato hasta 2027</span>
                             </div>
 
-                            <!-- Carrusel Deslizable del Resto de Concejales -->
-                            <div style="flex: 1; min-width: 280px; display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; scroll-behavior: smooth;">
-                                <div class="concejal-card" style="flex: 0 0 200px; background: #fff; padding: 15px; text-align: center;">
-                                    <h4 style="font-size: 14px;">Cielo Daou</h4>
-                                    <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2027</span>
+                            <!-- Escenario del Carrusel 3D -->
+                            <div class="cc-wrapper" style="flex: 1; min-width: 300px; height: 200px; position: relative;">
+                                
+                                <button class="cc-arrow prev" onclick="mover3DBloque('bloque2Container', -1)" style="left: 5px; padding: 5px 10px; font-size: 16px;">&#10094;</button>
+                                
+                                <div id="bloque2Container" style="width:100%; height:100%; position:relative; display:flex; justify-content:center; align-items:center;">
+                                    <div class="concejal-card cc-slide is-center" style="position:absolute; width:200px; background:#fff; padding:15px; text-align:center;">
+                                        <h4 style="font-size: 14px; font-weight:700;">Cielo Daou</h4>
+                                        <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2027</span>
+                                    </div>
+                                    <div class="concejal-card cc-slide is-next" style="position:absolute; width:200px; background:#fff; padding:15px; text-align:center;">
+                                        <h4 style="font-size: 14px; font-weight:700;">Rafael Bazán</h4>
+                                        <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2027</span>
+                                    </div>
+                                    <div class="concejal-card cc-slide is-prev" style="position:absolute; width:200px; background:#fff; padding:15px; text-align:center;">
+                                        <h4 style="font-size: 14px; font-weight:700;">Ernesto Giménez</h4>
+                                        <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2027</span>
+                                    </div>
                                 </div>
-                                <div class="concejal-card" style="flex: 0 0 200px; background: #fff; padding: 15px; text-align: center;">
-                                    <h4 style="font-size: 14px;">Rafael Bazán</h4>
-                                    <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2027</span>
-                                </div>
-                                <div class="concejal-card" style="flex: 0 0 200px; background: #fff; padding: 15px; text-align: center;">
-                                    <h4 style="font-size: 14px;">Ernesto Giménez</h4>
-                                    <span style="font-size: 11px; color: #95a5a6; display: block; margin-top: 5px;">Mandato hasta 2027</span>
-                                </div>
+
+                                <button class="cc-arrow next" onclick="mover3DBloque('bloque2Container', 1)" style="right: 5px; padding: 5px 10px; font-size: 16px;">&#10095;</button>
                             </div>
 
                         </div>
                     </div>
                 </div>
 
-                <!-- BLOQUES MONO-CONCEJALES (Quedan fijos estéticos ya que son únicos integrantes) -->
+                <!-- BLOQUES MONO-CONCEJALES FIJOS -->
                 <!-- BLOQUE 3 -->
                 <div style="margin-bottom: 15px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--white); overflow: hidden;">
                     <button class="bloque-toggle-btn" onclick="toggleBloque('bloque3')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
