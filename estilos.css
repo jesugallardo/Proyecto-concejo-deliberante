@@ -1,4 +1,4 @@
-/* PALETA DE COLORES E IDENTIDAD - ESTILO SANTA FE */
+/* PALETA DE COLORES E IDENTIDAD*/
 :root {
     --primary-color: #2c3e50;
     --accent-color: #00bcd4;
@@ -74,14 +74,12 @@ body {
 
 /* ENCABEZADO Y LOGO */
 .main-header {
-    background-color: #ffffff;
+    background-color: var(--white);
     border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 9999; 
 }
-
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -816,5 +814,29 @@ body.high-contrast .dropdown-content a:hover {
     #concejales .concejal-card span {
         font-size: 10.5px !important;
         line-height: 1.2;
+    }
+}
+/* 📱 CORRECCIÓN DE DISTRIBUCIÓN EN CELULARES */
+@media (max-width: 768px) {
+    
+    .header-container {
+        flex-direction: column !important; /* Pone el título arriba y el botón abajo */
+        align-items: flex-start !important; /* Alinea todo prolijo a la izquierda */
+        gap: 12px !important; /* Le da una separación elegante para que no se peguen */
+        padding: 10px 0 !important;
+    }
+
+    .logo-area {
+        width: 100%; /* El título toma todo el ancho para no romperse */
+    }
+
+    .logo-area h1 {
+        font-size: 20px !important; /* Un toque más chico para que entre perfecto en pantallas angostas */
+        line-height: 1.2;
+    }
+
+    .menu-toggle {
+        align-self: flex-end; /* Si prefieres que el botón quede a la derecha pero abajo, esta línea lo acomoda ahí */
+        margin-top: 5px;
     }
 }
