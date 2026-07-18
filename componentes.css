@@ -81,16 +81,18 @@
     font-size: 14px;
     transition: transform 0.2s, box-shadow 0.2s;
     border: 1px solid var(--border-color);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transición premium más fluida */
 }
 
 .destacado-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    transform: translateY(-8px); /* ⬅️ Eleva la tarjeta sutilmente */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); /* Sombra más profunda al elevarse */
+    border-color: var(--accent-color); /* El borde se pinta del color de acento */
 }
 
 .destacado-item i {
-    font-size: 22px;
-    color: var(--accent-color);
+    transform: scale(1.15); /* El ícono se agranda un poquito */
+    transition: transform 0.3s ease;
 }
 
 .btn-amarillo {

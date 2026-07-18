@@ -17,13 +17,11 @@
     box-sizing: border-box;
 }
 
+/* Al principio de global.css */
 body {
-    font-family: var(--font-family);
-    font-size: var(--font-size-base);
-    color: var(--dark-text);
-    line-height: 1.6;
-    background-color: var(--white);
-    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Inter', sans-serif; /* ⬅️ Cambia la tipografía vieja por esta */
+    color: var(--primary-color);
+    background-color: var(--light-bg);
 }
 
 .container {
